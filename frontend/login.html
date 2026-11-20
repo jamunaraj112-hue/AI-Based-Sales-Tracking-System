@@ -1,0 +1,243 @@
+a<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesTrack AI — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Background Ambient Glow Effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <div class="auth-wrapper">
+        <main class="auth-card">
+            
+            <!-- LEFT SECTION: Brand & AI Capabilities -->
+            <section class="brand-panel">
+                <div class="brand-header">
+                    <div class="brand-logo">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <h2>SalesTrack <span>AI</span></h2>
+                        <span class="brand-tag">Enterprise Edition</span>
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="ai-pill">
+                        <span class="pulsing-dot"></span>
+                        AI-Powered Business Intelligence
+                    </div>
+                    <h1>Track Smarter.<br>Forecast Deeper.<br><span class="gradient-text">Grow Faster.</span></h1>
+                    <p class="hero-desc">
+                        A next-generation sales management platform combining point-of-sale transactions with predictive machine learning and automated customer analytics.
+                    </p>
+
+                    <!-- Feature Showcase Grid -->
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon icon-cyan">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-info">
+                                <h4>Sales Demand Forecasting</h4>
+                                <p>Predict future demand & optimize inventory before stock runs out.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon icon-purple">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="feature-info">
+                                <h4>Smart Recommendation Engine</h4>
+                                <p>Frequent pattern mining for real-time cross-selling at checkout.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon icon-emerald">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-info">
+                                <h4>Customer RFM Segmentation</h4>
+                                <p>K-Means clustering to uncover high-value and at-risk customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-footer">
+                    <span>© 2026 SalesTrack AI System</span>
+                    <a href="/register" class="footer-links">New Admin Setup</a>
+                </div>
+            </section>
+
+            <!-- RIGHT SECTION: Traditional Form Login (No API) -->
+            <section class="form-panel">
+                <div class="form-container">
+                    
+                    <div class="form-header">
+                        <div class="portal-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Authorized Access
+                        </div>
+                        <h2>Welcome Back</h2>
+                        <p class="form-subtitle">Enter your credentials to access the sales analytics portal</p>
+                    </div>
+
+                    <!-- Server Error/Success Message Banners -->
+                    {% if error %}
+                    <div class="alert-box alert-error">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+
+                    {% if success %}
+                    <div class="alert-box alert-success">
+                        {{ success }}
+                    </div>
+                    {% endif %}
+
+                    <!-- Quick Demo Credentials for Fast Viva Testing -->
+                    <div class="demo-bar">
+                        <span class="demo-label">Demo:</span>
+                        <button type="button" class="demo-chip" id="btnDemoAdmin" title="Fill Admin Credentials">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                            <span>Admin</span>
+                        </button>
+                    </div>
+
+                    <!-- Traditional HTML Form (Submits directly to Python) -->
+                    <form action="/login" method="POST" autocomplete="on">
+                        <!-- Email Input -->
+                        <div class="input-field">
+                            <label for="email">Email Address</label>
+                            <div class="input-control">
+                                <div class="input-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="admin@salestrack.ai" 
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Input -->
+                        <div class="input-field">
+                            <div class="label-row">
+                                <label for="password">Password</label>
+                                <a href="#" class="forgot-link" tabindex="-1">Forgot password?</a>
+                            </div>
+                            <div class="input-control">
+                                <div class="input-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    placeholder="••••••••" 
+                                    required
+                                >
+                                <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
+                                    <svg id="eyeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Options Row -->
+                        <div class="form-options">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="remember_me" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">Keep me signed in</span>
+                            </label>
+                        </div>
+
+                        <!-- Direct Form Submit Button -->
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span>Sign In to Dashboard</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <!-- Footer Info -->
+                    <div class="form-footer">
+                        <p>Need an account? <a href="/register">Register new administrator</a></p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Password toggle & Demo autofill
+        const pw = document.getElementById('password');
+        const toggle = document.getElementById('togglePassword');
+        const eye = document.getElementById('eyeIcon');
+        toggle.addEventListener('click', () => {
+            if (pw.type === 'password') {
+                pw.type = 'text';
+                eye.innerHTML = '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><line x1="2" x2="22" y1="2" y2="22"></line>';
+            } else {
+                pw.type = 'password';
+                eye.innerHTML = '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle>';
+            }
+        });
+
+        const demoBtn = document.getElementById('btnDemoAdmin');
+        if (demoBtn) {
+            demoBtn.addEventListener('click', () => {
+                document.getElementById('email').value = 'admin@salestrack.ai';
+                document.getElementById('password').value = 'admin123';
+            });
+        }
+    </script>
+</body>
+</html>
